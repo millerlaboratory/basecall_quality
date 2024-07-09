@@ -1,4 +1,4 @@
-# basecall_quality
+# Basecaling quality plotter
 Make nice histograms of basecalling quality for one or more samples
 
 ![a trivial example](https://github.com/millerlaboratory/basecall_quality/blob/main/test_for_repo.png)
