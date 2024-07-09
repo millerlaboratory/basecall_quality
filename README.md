@@ -1,7 +1,7 @@
 # basecall_quality
 Make nice histograms of basecalling quality for one or more samples
 
-![a trivial example](https://github.com/[millerlaboratory]/[basecall_quality]/blob/main/test_for_repo.png?raw=true)
+<img src="https://github.com/millerlaboratory/basecall_quality/blob/main/test_for_repo.png", alt="a trivial example", width="60%/>
 
 The shell script can be used directly with the output of dorado summary. The rscript expects a two column file with header "sequence_length_template        mean_qscore_template"
 
