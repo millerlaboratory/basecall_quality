@@ -2,7 +2,7 @@
 
 WDIR=$(pwd)
 
-TITLE="Mean Quality"
+TITLE="MeanQuality"
 NAMES=""
 SUBSAMPLE=1000000
 OUTPUT="$WDIR/plot.png"
@@ -47,9 +47,15 @@ done
 if [ ${#SAMPLES[@]} -gt 1 ]
 then
   COMPARISONS=$(echo ${SAMPLES[@]} | tr ' ' '-')
-  Rscript qualityGraph.R -o $OUTPUT -n $NAMES -s $SUBSAMPLE -t $TITLE -c $COMPARISONS ${SAMPLES[0]}
+  if [[ $NAMES == "" ]]
+  then
+    Rscript qualityGraph.R -o $OUTPUT -s $SUBSAMPLE -t \"$TITLE\" -c $COMPARISONS ${SAMPLES[0]}
+  else
+    Rscript qualityGraph.R -o $OUTPUT -n $NAMES -s $SUBSAMPLE -t \"$TITLE\" -c $COMPARISONS ${SAMPLES[0]}
+  fi
+
 else
-  Rscript qualityGraph.R -o $OUTPUT -n $NAMES -s $SUBSAMPLE -t $TITLE ${SAMPLES[0]}
+  Rscript qualityGraph.R -o $OUTPUT -s $SUBSAMPLE -t \"$TITLE\" ${SAMPLES[0]}
 fi
 
 rm -rf $WDIR/*.short.temp.tsv
